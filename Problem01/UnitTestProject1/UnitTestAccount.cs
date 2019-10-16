@@ -20,11 +20,11 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestMethodDeposit()
         {
-            Account acc = new Account(400000);
+            Account acc = new Account(10000000);
 
             Assert.IsNotNull(acc);
             Assert.IsInstanceOfType(acc, typeof(Account));
-            Assert.AreEqual(400000, acc.Balance());
+            Assert.AreEqual(10000000, acc.Balance());
         }
     }
 }
