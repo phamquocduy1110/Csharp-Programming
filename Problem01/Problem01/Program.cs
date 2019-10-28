@@ -80,7 +80,7 @@ namespace Problem01
 
         private static void Check_For_Your_Balance()
         {
-            Console.WriteLine("\nYour Total Remaining Balance Is: ")
+            Console.WriteLine("\nYour Total Remaining Balance Is: ");
             Account acc = new Account(10000000);
             acc.Balance();
         }
