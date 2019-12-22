@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FamilyMembersManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="member">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fullname" Type="nvarchar" MaxLength="50" />
+          <Property Name="gender" Type="bit" Nullable="false" />
+          <Property Name="birthday" Type="date" />
+          <Property Name="status" Type="bit" />
+          <Property Name="hometown" Type="nvarchar(max)" />
+          <Property Name="living" Type="nvarchar(max)" />
+          <Property Name="occupation" Type="nvarchar(max)" />
+          <Property Name="Father_id" Type="int" />
+          <Property Name="Mother_id" Type="int" />
+          <Property Name="spouse_id" Type="int" />
+        </EntityType>
+        <Association Name="FK__member__Father_i__108B795B">
+          <End Role="member" Type="Self.member" Multiplicity="0..1" />
+          <End Role="member1" Type="Self.member" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="member">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="member1">
+              <PropertyRef Name="Father_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__member__Mother_i__117F9D94">
+          <End Role="member" Type="Self.member" Multiplicity="0..1" />
+          <End Role="member1" Type="Self.member" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="member">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="member1">
+              <PropertyRef Name="Mother_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__member__spouse_i__1273C1CD">
+          <End Role="member" Type="Self.member" Multiplicity="0..1" />
+          <End Role="member1" Type="Self.member" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="member">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="member1">
+              <PropertyRef Name="spouse_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FamilyMembersManagementModelStoreContainer">
+          <EntitySet Name="member" EntityType="Self.member" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__member__Father_i__108B795B" Association="Self.FK__member__Father_i__108B795B">
+            <End Role="member" EntitySet="member" />
+            <End Role="member1" EntitySet="member" />
+          </AssociationSet>
+          <AssociationSet Name="FK__member__Mother_i__117F9D94" Association="Self.FK__member__Mother_i__117F9D94">
+            <End Role="member" EntitySet="member" />
+            <End Role="member1" EntitySet="member" />
+          </AssociationSet>
+          <AssociationSet Name="FK__member__spouse_i__1273C1CD" Association="Self.FK__member__spouse_i__1273C1CD">
+            <End Role="member" EntitySet="member" />
+            <End Role="member1" EntitySet="member" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FamilyMembersManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="member">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="gender" Type="Boolean" Nullable="false" />
+          <Property Name="birthday" Type="DateTime" Precision="0" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="hometown" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="living" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="occupation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Father_id" Type="Int32" />
+          <Property Name="Mother_id" Type="Int32" />
+          <Property Name="spouse_id" Type="Int32" />
+          <NavigationProperty Name="member1" Relationship="Self.FK__member__Father_i__108B795B" FromRole="member" ToRole="member1" />
+          <NavigationProperty Name="member2" Relationship="Self.FK__member__Father_i__108B795B" FromRole="member1" ToRole="member" />
+          <NavigationProperty Name="member11" Relationship="Self.FK__member__Mother_i__117F9D94" FromRole="member" ToRole="member1" />
+          <NavigationProperty Name="member3" Relationship="Self.FK__member__Mother_i__117F9D94" FromRole="member1" ToRole="member" />
+          <NavigationProperty Name="member12" Relationship="Self.FK__member__spouse_i__1273C1CD" FromRole="member" ToRole="member1" />
+          <NavigationProperty Name="member4" Relationship="Self.FK__member__spouse_i__1273C1CD" FromRole="member1" ToRole="member" />
+        </EntityType>
+        <Association Name="FK__member__Father_i__108B795B">
+          <End Role="member" Type="Self.member" Multiplicity="0..1" />
+          <End Role="member1" Type="Self.member" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="member">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="member1">
+              <PropertyRef Name="Father_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__member__Mother_i__117F9D94">
+          <End Role="member" Type="Self.member" Multiplicity="0..1" />
+          <End Role="member1" Type="Self.member" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="member">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="member1">
+              <PropertyRef Name="Mother_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__member__spouse_i__1273C1CD">
+          <End Role="member" Type="Self.member" Multiplicity="0..1" />
+          <End Role="member1" Type="Self.member" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="member">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="member1">
+              <PropertyRef Name="spouse_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FamilyMembersManagementEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="members" EntityType="Self.member" />
+          <AssociationSet Name="FK__member__Father_i__108B795B" Association="Self.FK__member__Father_i__108B795B">
+            <End Role="member" EntitySet="members" />
+            <End Role="member1" EntitySet="members" />
+          </AssociationSet>
+          <AssociationSet Name="FK__member__Mother_i__117F9D94" Association="Self.FK__member__Mother_i__117F9D94">
+            <End Role="member" EntitySet="members" />
+            <End Role="member1" EntitySet="members" />
+          </AssociationSet>
+          <AssociationSet Name="FK__member__spouse_i__1273C1CD" Association="Self.FK__member__spouse_i__1273C1CD">
+            <End Role="member" EntitySet="members" />
+            <End Role="member1" EntitySet="members" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FamilyMembersManagementModelStoreContainer" CdmEntityContainer="FamilyMembersManagementEntities">
+          <EntitySetMapping Name="members">
+            <EntityTypeMapping TypeName="FamilyMembersManagementModel.member">
+              <MappingFragment StoreEntitySet="member">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="hometown" ColumnName="hometown" />
+                <ScalarProperty Name="living" ColumnName="living" />
+                <ScalarProperty Name="occupation" ColumnName="occupation" />
+                <ScalarProperty Name="Father_id" ColumnName="Father_id" />
+                <ScalarProperty Name="Mother_id" ColumnName="Mother_id" />
+                <ScalarProperty Name="spouse_id" ColumnName="spouse_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
