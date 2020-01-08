@@ -31,8 +31,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication14", "Con
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dishes Database Management 12-10-2019", "Dishes Database Management 12-10-2019\Dishes Database Management 12-10-2019.csproj", "{8EF6A306-8533-43B3-AA70-C86BE97D3647}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Insert Update Delete View Search in Csharp SQL Server Database  18-11-2019", "Insert Update Delete View Search in Csharp SQL Server Database  18-11-2019\Insert Update Delete View Search in Csharp SQL Server Database  18-11-2019.csproj", "{8D4F75E0-B5EF-4A5D-879B-1021DE9956AE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View All Members 25-11-2019", "View All Members 25-11-2019\View All Members 25-11-2019.csproj", "{215FD5A0-7E62-485E-BE3E-06A189442648}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_26_11_2019", "Test_26_11_2019\Test_26_11_2019.csproj", "{A5F8A68C-34EB-458B-AD94-40E3543901DF}"
@@ -101,10 +99,6 @@ Global
 		{8EF6A306-8533-43B3-AA70-C86BE97D3647}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EF6A306-8533-43B3-AA70-C86BE97D3647}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EF6A306-8533-43B3-AA70-C86BE97D3647}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8D4F75E0-B5EF-4A5D-879B-1021DE9956AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8D4F75E0-B5EF-4A5D-879B-1021DE9956AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8D4F75E0-B5EF-4A5D-879B-1021DE9956AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8D4F75E0-B5EF-4A5D-879B-1021DE9956AE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{215FD5A0-7E62-485E-BE3E-06A189442648}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{215FD5A0-7E62-485E-BE3E-06A189442648}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{215FD5A0-7E62-485E-BE3E-06A189442648}.Release|Any CPU.ActiveCfg = Release|Any CPU

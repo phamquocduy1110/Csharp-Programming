@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,25 +55,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HomePageForm.cs">
+    <Compile Include="Class\LogicalLayer.cs" />
+    <Compile Include="Class\StudentManagement.cs" />
+    <Compile Include="Forms\CreateNewStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HomePageForm.Designer.cs">
+    <Compile Include="Forms\CreateNewStudentForm.Designer.cs">
+      <DependentUpon>CreateNewStudentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HomePageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HomePageForm.Designer.cs">
       <DependentUpon>HomePageForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddNewStudentForm.cs">
+    <Compile Include="Forms\UpdateStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddNewStudentForm.Designer.cs">
-      <DependentUpon>AddNewStudentForm.cs</DependentUpon>
+    <Compile Include="Forms\UpdateStudentForm.Designer.cs">
+      <DependentUpon>UpdateStudentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Member.cs">
+      <DependentUpon>StudentManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddNewStudentForm.resx">
-      <DependentUpon>AddNewStudentForm.cs</DependentUpon>
+    <Compile Include="StudentManagement.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentManagement.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudentManagement.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudentManagement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentManagement.edmx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\CreateNewStudentForm.resx">
+      <DependentUpon>CreateNewStudentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HomePageForm.resx">
+    <EmbeddedResource Include="Forms\HomePageForm.resx">
       <DependentUpon>HomePageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateStudentForm.resx">
+      <DependentUpon>UpdateStudentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -75,6 +113,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -84,9 +123,32 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="StudentManagement.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StudentManagement.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="StudentManagement.edmx.diagram">
+      <DependentUpon>StudentManagement.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="StudentManagement.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>StudentManagement.Context.cs</LastGenOutput>
+      <DependentUpon>StudentManagement.edmx</DependentUpon>
+    </Content>
+    <Content Include="StudentManagement.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StudentManagement.edmx</DependentUpon>
+      <LastGenOutput>StudentManagement.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

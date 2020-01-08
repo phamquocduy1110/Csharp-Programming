@@ -24,7 +24,7 @@ namespace Problem01
                 smallest = i;
                 for (int j = i + 1; j < n; j++)
                 {
-                    if (arr[j] < arr[smallest])
+                    if (arr[j] > arr[smallest])
                     {
                         smallest = j;
                     }

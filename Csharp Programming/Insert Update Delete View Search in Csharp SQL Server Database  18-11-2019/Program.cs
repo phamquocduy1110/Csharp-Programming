@@ -16,7 +16,7 @@ namespace Insert_Update_Delete_View_Search_in_Csharp_SQL_Server_Database__18_11_
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormStudentDatabaseManagement());
+            Application.Run(new HomePageForm());
         }
     }
 }
